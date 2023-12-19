@@ -1,0 +1,187 @@
+$background-color: #4f4a4a;
+$card-background-color: #ffffff;
+$text-color: #333333;
+$title-color: #ffffff;
+$button-background-color: #007bff;
+$button-hover-background-color: #0056b3;
+$footer-background-color: #282c34;
+$footer-text-color: #ffffff; 
+$link-color: #61dafb; 
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: $background-color;
+}
+
+.title { 
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: $title-color;
+}
+
+.button {
+  background-color: $button-background-color;
+  color: $footer-text-color;
+  border: none;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.3s; 
+
+  &:hover, &:focus {
+    background-color: $button-hover-background-color;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: $button-hover-background-color;
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    background-color: darken($button-background-color, 20%);
+    cursor: not-allowed; 
+  }
+}
+
+.cards_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.card_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: $card-background-color;
+  border-radius: 10px; 
+  color: $text-color;
+
+  h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    img {
+      flex: 0 0 auto;
+      min-width: 100px;
+      height: auto;
+      margin-right: 5px;
+      transition: transform 0.3s ease; 
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    img:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.card_secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: $card-background-color;
+  margin: 20px 0;
+  width: 250px; 
+  height: 300px; 
+  overflow: hidden;
+  color: $text-color;
+
+  h3, h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+.footer {
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative; 
+  width: 100%;
+
+  .heart {
+    color: red;
+  }
+
+  .link {
+    color: $link-color;
+    text-decoration: none;
+    transition: color 0.3s; 
+
+    &:hover {
+      color: $footer-text-color;
+    }
+  }
+}
+
+.animate {
+  animation: scrollLeft 7s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+@media (max-width: 768px) {
+  .cards_row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card_main, .card_secondary {
+    width: 100%; 
+    height: auto;
+    margin: 10px 0;
+  }
+}
