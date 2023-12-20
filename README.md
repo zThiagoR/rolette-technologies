@@ -12,7 +12,7 @@ A "Roleta de Tecnologias" é uma ferramenta interativa desenvolvida para auxilia
 
 ## Como Utilizar
 
-1. Acesse a ferramenta no [link do projeto].
+1. Acesse a ferramenta neste [link](https://rolette-technologies.vercel.app/).
 2. Clique no botão para ativar a roleta.
 3. Conheça as tecnologias selecionadas e explore suas possibilidades.
 
