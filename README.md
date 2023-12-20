@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Roleta de Tecnologias
 
-## Getting Started
+## Sobre o Projeto
 
-First, run the development server:
+A "Roleta de Tecnologias" é uma ferramenta interativa desenvolvida para auxiliar desenvolvedores, estudantes e entusiastas de tecnologia na escolha de tecnologias para seus projetos ou aprendizado. Este projeto visa simplificar a decisão sobre quais linguagens de programação, frameworks e bancos de dados utilizar, em um campo onde as opções são extensas e sempre em evolução.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Seleção Aleatória de Tecnologias:** A ferramenta escolhe aleatoriamente entre uma variedade de tecnologias populares com um simples clique.
+- **Cards Informativos:** Cada tecnologia é representada por um card que inclui seu ícone e uma breve descrição.
+- **Cobertura de Diversas Áreas:** A ferramenta abrange categorias como Front-End, Back-End, CSS e Bancos de Dados.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como Utilizar
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Acesse a ferramenta no [link do projeto].
+2. Clique no botão para ativar a roleta.
+3. Conheça as tecnologias selecionadas e explore suas possibilidades.
 
-## Learn More
+## Contribuições
 
-To learn more about Next.js, take a look at the following resources:
+Suas contribuições são essenciais para tornar este projeto ainda melhor. Seja adicionando novas funcionalidades, corrigindo bugs ou melhorando a documentação, sua ajuda é sempre bem-vinda.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Como Contribuir
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Faça um Fork do projeto.
+2. Crie uma nova Branch para sua Feature (`git checkout -b feature/AmazingFeature`).
+3. Faça seus commits seguindo as [diretrizes de commits](CONTRIBUTING.md).
+4. Envie suas alterações (`git push origin feature/AmazingFeature`).
+5. Abra um Pull Request.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Leia nosso [guia de contribuição](CONTRIBUTING.md) para mais informações sobre como contribuir efetivamente.
