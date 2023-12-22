@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import Image from 'next/image';
-import styles from "../../../styles/page.module.scss";
+import Image from "next/image";
 
-import data from "../../../data/technologies.json";
-
-interface TypeFramework {
-  name: string;
-  image: string;
-}
+import styles from "@/styles/page.module.scss";
+import data from "@/data/technologies.json";
+import { randomSelector } from "@/utils/randomSelector";
+import { TypeSelected } from "@/types";
 
 interface props {
   isAnimation: boolean;
@@ -15,16 +12,13 @@ interface props {
 }
 
 export default function CssCard({ isAnimation, winner }: props) {
-  const [selectedCSS, setSelectedCSS] = useState<TypeFramework | null>(null);
+  const [selectedCSS, setSelectedCSS] = useState<TypeSelected | null>(null);
 
   useEffect(() => {
     if (winner) {
-      const cssEntries = Object.entries(data["CSS"]);
-      const randomCSSIndex = Math.floor(Math.random() * cssEntries.length);
-      const [cssName, cssImage] = cssEntries[randomCSSIndex];
-      setSelectedCSS({ name: cssName, image: cssImage as string });
-    } else {
-      setSelectedCSS(null);
+      const cssOptions = data["CSS"];
+      const randomCSS = randomSelector(cssOptions);
+      setSelectedCSS(randomCSS);
     }
   }, [winner]);
 

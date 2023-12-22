@@ -3,8 +3,8 @@ import Image from "next/image";
 
 import styles from "@/styles/page.module.scss";
 import data from "@/data/technologies.json";
-import { randomDBSelector } from "@/services/randomDBSelector";
-import { dbType } from "@/utils/types";
+import { randomSelector } from "@/utils/randomSelector";
+import { TypeSelected } from "@/types";
 
 type dbCardProps = {
   isAnimation: boolean;
@@ -12,13 +12,13 @@ type dbCardProps = {
 };
 
 export default function DatabasesCard({ isAnimation, winner }: dbCardProps) {
-  const [selectedDB, setSelectedDB] = useState<dbType | null>(null);
+  const [selectedDB, setSelectedDB] = useState<TypeSelected | null>(null);
 
   useEffect(() => {
     if (winner) {
       const dbOptions = data["Databases"];
-      const selectedDB = dbOptions ? randomDBSelector(dbOptions) : null;
-      setSelectedDB(selectedDB);
+      const randomDB = randomSelector(dbOptions);
+      setSelectedDB(randomDB);
     }
   }, [winner]);
 

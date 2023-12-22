@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import Image from 'next/image';
-import styles from "../../../styles/page.module.scss";
+import Image from "next/image";
 
-import data from "../../../data/technologies.json";
-
-interface TypeFramework {
-  name: string;
-  image: string;
-}
+import styles from "@/styles/page.module.scss";
+import data from "@/data/technologies.json";
+import { randomSelector } from "@/utils/randomSelector";
+import { TypeSelected } from "@/types";
 
 interface props {
   isAnimation: boolean;
@@ -15,18 +12,14 @@ interface props {
 }
 
 export default function FrontEndCard({ isAnimation, winner }: props) {
-  const [selectedFramework, setSelectedFramework] = useState<TypeFramework | null>(null);
+  const [selectedFramework, setSelectedFramework] =
+    useState<TypeSelected | null>(null);
 
   useEffect(() => {
-    const frameworkOptions = data["Front-End"][winner as keyof typeof data["Front-End"]];
-
-    if (winner && frameworkOptions) {  
-      const frameworkEntries = Object.entries(frameworkOptions);
-      const randomFrameworkIndex = Math.floor(Math.random() * frameworkEntries.length);
-      const [frameworkName, frameworkImage] = frameworkEntries[randomFrameworkIndex];
-      setSelectedFramework({ name: frameworkName, image: frameworkImage as string });
-    } else {
-      setSelectedFramework(null);
+    if (winner) {
+      const frameworkOptions = data["Front-End"][winner as keyof (typeof data)["Front-End"]];
+      const randomFramework = randomSelector(frameworkOptions);
+      setSelectedFramework(randomFramework);
     }
   }, [winner]);
 
