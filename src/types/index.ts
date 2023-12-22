@@ -1,4 +1,4 @@
-export type dbType = {
+export type TypeSelected = {
   name: string;
   image: string;
 };
