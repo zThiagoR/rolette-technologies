@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react'
-import styles from '../styles/page.module.scss'
+import { useState } from 'react';
+import styles from '../styles/page.module.scss';
 
 import LanguagesCard from './components/Cards/Languages';
 import FrontEndCard from './components/Cards/FrontEnd';
@@ -11,55 +11,39 @@ import CssCard from './components/Cards/Css';
 import Footer from './components/footer';
 
 export default function Home() {
-  const [animation, setAnimation] = useState(false)
-  const [winner, setWinner] = useState<string | null>(null)
+  const [animation, setAnimation] = useState(false);
+  const [winner, setWinner] = useState<string | null>(null);
 
   const handleWinner = (winnerName: string) => {
     setWinner(winnerName);
     setAnimation(false);
   };
-  
+
   const handleRoulette = () => {
-    setWinner(null); 
+    setWinner(null);
     setAnimation(true);
   };
 
   return (
     <>
       <main className={styles.main}>
-        <h1 className={styles.title}>Quais tecnologias devo usar no próximo projeto?</h1>
+        <h1 className={styles.title}>Qual tecnologia devo usar no meu próximo projeto?</h1>
 
         <button onClick={handleRoulette} className={styles.button} disabled={animation}>
-          {
-            animation ? 'Sorteando...' : winner ? 'Sortear novamente' : 'Sortear'
-          }
+          {animation ? 'Sorteando...' : winner ? 'Sortear novamente' : 'Sortear'}
         </button>
 
-        <LanguagesCard
-          isAnimation={animation}
-          onWinner={handleWinner}
-          winner={winner} />
+        <LanguagesCard isAnimation={animation} onWinner={handleWinner} winner={winner} />
 
         <div className={styles.cards_row}>
-          <FrontEndCard
-            isAnimation={animation}
-            winner={winner} />
-
-          <CssCard
-            isAnimation={animation}
-            winner={winner} />
-
-          <BackEndCard
-            isAnimation={animation}
-            winner={winner} />
-
-          <DatabasesCard
-            isAnimation={animation}
-            winner={winner} />
+          <FrontEndCard isAnimation={animation} winner={winner} />
+          <CssCard isAnimation={animation} winner={winner} />
+          <BackEndCard isAnimation={animation} winner={winner} />
+          <DatabasesCard isAnimation={animation} winner={winner} />
         </div>
       </main>
 
       <Footer />
     </>
-  )
+  );
 }
