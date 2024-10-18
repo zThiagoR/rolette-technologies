@@ -1,46 +1,52 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import styles from "../../../styles/page.module.scss";
+import styles from '../../../styles/card.module.scss';
 
-import data from "../../../data/technologies.json";
+import data from '../../../data/technologies.json';
 
-interface TypeSQL {
+interface TypeDatabase {
   name: string;
   image: string;
 }
 
-interface SQLCardProps {
+interface Props {
   isAnimation: boolean;
   winner: string | null;
 }
 
-export default function DatabasesCard({ isAnimation, winner }: SQLCardProps) {
-  const [selectedSQL, setSelectedSQL] = useState<TypeSQL | null>(null);
+export default function DatabasesCard({ isAnimation, winner }: Props) {
+  const [selectedDatabase, setSelectedDatabase] = useState<TypeDatabase | null>(null);
 
   useEffect(() => {
-    if (winner) {
-      const databaseOptions = data["Databases"];
-      if (databaseOptions) {
-        const sqlEntries = Object.entries(databaseOptions);
-        const randomSQLEntry = sqlEntries[Math.floor(Math.random() * sqlEntries.length)];
-        setSelectedSQL({ name: randomSQLEntry[0], image: randomSQLEntry[1] as string });
-      } else {
-        setSelectedSQL(null);
-      }
+    if (winner && !isAnimation) {
+      const databaseOptions = data['Databases'];
+      const dbEntries = Object.entries(databaseOptions);
+      const randomDBIndex = Math.floor(Math.random() * dbEntries.length);
+      const [dbName, dbImage] = dbEntries[randomDBIndex];
+      setSelectedDatabase({ name: dbName, image: dbImage as string });
+    } else if (isAnimation) {
+      setSelectedDatabase(null);
     }
-  }, [winner]);
+  }, [winner, isAnimation]);
 
   return (
     <div className={styles.card_secondary}>
       <h3>Databases</h3>
-      {selectedSQL && winner ? (
-        <div className={`${styles.carousel} ${isAnimation ? styles.animate : ''}`}>
-          <Image src={selectedSQL.image} alt={selectedSQL.name} title={selectedSQL.name} width={64} height={64} />
-          <p>
-            {selectedSQL.name}
-          </p>
+      {selectedDatabase ? (
+        <div className={styles.framework}>
+          <Image
+            src={selectedDatabase.image}
+            alt={selectedDatabase.name}
+            title={selectedDatabase.name}
+            width={64}
+            height={64}
+            loading="lazy"
+          />
+          <p>{selectedDatabase.name}</p>
         </div>
-      ) : <p>Nenhuma tecnologia selecionada</p>}
+      ) : (
+        <p>Nenhuma tecnologia selecionada</p>
+      )}
     </div>
   );
 }
