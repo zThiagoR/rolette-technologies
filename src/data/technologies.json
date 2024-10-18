@@ -10,7 +10,7 @@
     "C": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
     "Ruby": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
     "Golang": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
-    "Rust": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg",
+    "Rust": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg",
     "Kotlin": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
     "Swift": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg",
     "Elixir": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elixir/elixir-original.svg",
@@ -37,23 +37,23 @@
   },
   "CSS": {
     "Sass": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-    "Bootstrap": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
-    "Materialize": "https://i.imgur.com/Xt9r6s6.png",
+    "Bootstrap": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    "Materialize": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materializecss/materializecss-original.svg",
     "Material-UI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
   },
   "Back-End": {
     "JavaScript": {
-      "NodeJS": "https://i.imgur.com/mq4YMaA.png",
+      "NodeJS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
       "Express": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      "NestJS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+      "NestJS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
     },
     "TypeScript": {
       "NodeJS": "https://i.imgur.com/mq4YMaA.png",
       "Express": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      "NestJS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+      "NestJS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
     },
     "PHP": {
-      "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+      "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
       "CakePHP": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cakephp/cakephp-original.svg"
     },
     "Python": {
@@ -64,7 +64,7 @@
       "Spring Boot": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
     },
     "Ruby": {
-      "Ruby on Rails": "https://i.imgur.com/fsi3Gyc.png"
+      "Ruby on Rails": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-plain.svg"
     },
     "Elixir": {
       "Phoenix": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/phoenix/phoenix-original.svg"
