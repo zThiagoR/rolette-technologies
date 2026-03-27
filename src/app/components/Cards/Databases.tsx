@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import styles from '../../../styles/card.module.scss';
 
 import data from '../../../data/technologies.json';
@@ -34,7 +33,7 @@ export default function DatabasesCard({ isAnimation, winner }: Props) {
       <h3>Databases</h3>
       {selectedDatabase ? (
         <div className={styles.framework}>
-          <Image
+          <img
             src={selectedDatabase.image}
             alt={selectedDatabase.name}
             title={selectedDatabase.name}

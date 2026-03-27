@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import styles from '../../../styles/card.module.scss';
 
 import data from '../../../data/technologies.json';
@@ -19,6 +18,14 @@ export default function CssCard({ isAnimation, winner }: Props) {
 
   useEffect(() => {
     if (winner && !isAnimation) {
+      const frontEndOptions = data['Front-End'][winner as keyof typeof data['Front-End']];
+      const hasFrontEndForWinner = frontEndOptions && Object.keys(frontEndOptions).length > 0;
+
+      if (!hasFrontEndForWinner) {
+        setSelectedCSS(null);
+        return;
+      }
+
       const cssEntries = Object.entries(data['CSS']);
       const randomCSSIndex = Math.floor(Math.random() * cssEntries.length);
       const [cssName, cssImage] = cssEntries[randomCSSIndex];
@@ -33,7 +40,7 @@ export default function CssCard({ isAnimation, winner }: Props) {
       <h3>CSS</h3>
       {selectedCSS ? (
         <div className={styles.framework}>
-          <Image
+          <img
             src={selectedCSS.image}
             alt={selectedCSS.name}
             title={selectedCSS.name}

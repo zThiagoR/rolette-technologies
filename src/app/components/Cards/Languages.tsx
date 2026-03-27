@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Image from 'next/image';
 import styles from '../../../styles/card.module.scss';
 
 import data from '../../../data/technologies.json';
@@ -20,6 +19,7 @@ export default function LanguagesCard({ isAnimation, winner, onWinner }: Props) 
     name,
     image,
   }));
+  const carouselLanguages = isAnimation ? [...languageArray, ...languageArray] : languageArray;
 
   useEffect(() => {
     if (isAnimation && !winner) {
@@ -39,7 +39,7 @@ export default function LanguagesCard({ isAnimation, winner, onWinner }: Props) 
       <div className={styles.contentContainer}>
         {winner ? (
           <div className={styles.winner}>
-            <Image
+            <img
               src={languageArray.find((lang) => lang.name === winner)!.image}
               title={winner}
               alt={winner}
@@ -51,9 +51,9 @@ export default function LanguagesCard({ isAnimation, winner, onWinner }: Props) 
           </div>
         ) : (
           <div className={`${styles.carousel} ${isAnimation ? styles.animate : ''}`}>
-            {languageArray.map((language, index) => (
-              <div key={index} className={styles.carouselItem}>
-                <Image
+            {carouselLanguages.map((language, index) => (
+              <div key={`${language.name}-${index}`} className={styles.carouselItem}>
+                <img
                   src={language.image}
                   alt={language.name}
                   width={64}

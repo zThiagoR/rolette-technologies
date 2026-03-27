@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import styles from '../../../styles/card.module.scss';
 
 import data from '../../../data/technologies.json';
@@ -38,7 +37,7 @@ export default function FrontEndCard({ isAnimation, winner }: Props) {
       <h3>Front-End</h3>
       {selectedFramework ? (
         <div className={styles.framework}>
-          <Image
+          <img
             src={selectedFramework.image}
             alt={selectedFramework.name}
             title={selectedFramework.name}
