@@ -16,6 +16,24 @@ A "Roleta de Tecnologias" é uma ferramenta interativa desenvolvida para auxilia
 2. Clique no botão para ativar a roleta.
 3. Conheça as tecnologias selecionadas e explore suas possibilidades.
 
+## Tecnologias
+
+- React 18
+- TypeScript
+- Vite
+- Sass (SCSS Modules)
+
+## Rodando Localmente
+
+1. Instale as dependências:
+   - `yarn install`
+2. Rode o servidor local:
+   - `yarn dev`
+3. Build de produção:
+   - `yarn build`
+4. Preview local do build:
+   - `yarn preview`
+
 ## Contribuições
 
 Suas contribuições são essenciais para tornar este projeto ainda melhor. Seja adicionando novas funcionalidades, corrigindo bugs ou melhorando a documentação, sua ajuda é sempre bem-vinda.
