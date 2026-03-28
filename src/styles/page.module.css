@@ -1,0 +1,156 @@
+.appShell {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 14% 15%, rgba(120, 179, 255, 0.28), transparent 40%),
+    radial-gradient(circle at 86% 12%, rgba(106, 237, 221, 0.22), transparent 45%),
+    linear-gradient(160deg, var(--bg), #1b2a4f);
+  color: var(--text);
+  transition: background 0.35s ease;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: min(960px, 100%);
+  margin: 0 auto;
+  padding: 1.4rem 1rem 1rem;
+  text-align: center;
+}
+
+.hero {
+  max-width: 780px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.kicker {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  font-family: var(--font-ui);
+}
+
+.title {
+  margin-top: 0.6rem;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  font-family: var(--font-display);
+}
+
+.subtitle {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: clamp(0.97rem, 2vw, 1.08rem);
+}
+
+.spinButton {
+  margin-top: 1.45rem;
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem 1.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  color: #061019;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--primary), transparent 78%);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeUp 0.8s ease both;
+}
+
+.spinButton:hover:not(:disabled),
+.spinButton:focus-visible:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px color-mix(in srgb, var(--primary), transparent 70%);
+}
+
+.spinButton:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.primaryCard {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 1.2rem;
+}
+
+.cards_row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 920px) {
+  .cards_row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .cards_row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 0.8rem 1rem 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.heart {
+  color: #fb7185;
+  display: inline-block;
+  transform-origin: center;
+  animation: pulse 2.6s ease-in-out infinite;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--text);
+  text-decoration: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.16);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

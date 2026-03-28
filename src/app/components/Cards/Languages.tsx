@@ -1,33 +1,33 @@
-import { useEffect, useState } from "react";
-import Image from 'next/image'
-import styles from "../../../styles/page.module.scss";
+import { useEffect } from 'react';
+import styles from '../../../styles/card.module.css';
 
-import data from "../../../data/technologies.json";
+import data from '../../../data/technologies.json';
 
 interface TypeLanguage {
   name: string;
   image: string;
 }
 
-interface props {
+interface Props {
   isAnimation: boolean;
   winner: string | null;
   onWinner: (winnerName: string) => void;
 }
 
-export default function LanguagesCard({ isAnimation, winner, onWinner  }: props) {
+export default function LanguagesCard({ isAnimation, winner, onWinner }: Props) {
   const languageArray: TypeLanguage[] = Object.entries(data.Languages).map(([name, image]) => ({
     name,
-    image
+    image,
   }));
+  const carouselLanguages = isAnimation ? [...languageArray, ...languageArray] : languageArray;
 
   useEffect(() => {
     if (isAnimation && !winner) {
       const timer = setTimeout(() => {
         const winningIndex = Math.floor(Math.random() * languageArray.length);
-        const winner = languageArray[winningIndex];
-        onWinner(winner.name);
-      }, 7000);
+        const winnerLanguage = languageArray[winningIndex];
+        onWinner(winnerLanguage.name);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }
@@ -36,18 +36,33 @@ export default function LanguagesCard({ isAnimation, winner, onWinner  }: props)
   return (
     <div className={styles.card_main}>
       <h3>Linguagem de Programação:</h3>
-      <div className={`${styles.carousel} ${isAnimation ? styles.animate : ''}`}>
+      <div className={styles.contentContainer}>
         {winner ? (
           <div className={styles.winner}>
-            <Image src={languageArray.find(lang => lang.name === winner)!.image} title={winner} alt={winner} width={64} height={64} />
-            <p>
-              {winner}
-            </p>
+            <img
+              src={languageArray.find((lang) => lang.name === winner)!.image}
+              title={winner}
+              alt={winner}
+              width={64}
+              height={64}
+              loading="lazy"
+            />
+            <p>{winner}</p>
           </div>
         ) : (
-          languageArray.map((language, index) => (
-            <Image key={index} src={language.image} alt={language.name} width={64} height={64} />
-          ))
+          <div className={`${styles.carousel} ${isAnimation ? styles.animate : ''}`}>
+            {carouselLanguages.map((language, index) => (
+              <div key={`${language.name}-${index}`} className={styles.carouselItem}>
+                <img
+                  src={language.image}
+                  alt={language.name}
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>

@@ -1,0 +1,10 @@
+:root {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-ui: 'IBM Plex Sans', sans-serif;
+  --bg: #101a32;
+  --surface: #1a294a;
+  --text: #f2f7ff;
+  --muted: #b4c3df;
+  --primary: #6aeddd;
+  --accent: #78b3ff;
+}

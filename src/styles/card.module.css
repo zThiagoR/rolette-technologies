@@ -1,0 +1,96 @@
+.card_main,
+.card_secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 220px;
+  min-height: 210px;
+  padding: 0.85rem 0.75rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--text), transparent 84%);
+  background: color-mix(in srgb, var(--surface), transparent 6%);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  color: var(--text);
+  text-align: center;
+  justify-self: center;
+}
+
+.card_main {
+  max-width: 320px;
+  min-height: 240px;
+}
+
+.card_main h3,
+.card_secondary h3 {
+  margin-bottom: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  color: color-mix(in srgb, var(--text), var(--primary) 18%);
+}
+
+.card_secondary > p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.framework p,
+.winner p {
+  margin-top: 0.55rem;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 86px;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: max-content;
+  gap: 0.55rem;
+}
+
+.carouselItem {
+  flex: 0 0 auto;
+  min-width: 56px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+}
+
+.carouselItem img,
+.winner img,
+.framework img {
+  max-height: 56px;
+  width: auto;
+}
+
+.animate {
+  animation: scrollLeft 8s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.winner,
+.framework {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
