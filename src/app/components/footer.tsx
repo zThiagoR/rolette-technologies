@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <p>
-        Feito com <span className={styles.heart}>♥</span> por{' '}
+        Feito com <span className={styles.heart} aria-hidden="true">&hearts;</span> por{' '}
         <a
           className={styles.link}
           href="https://github.com/zThiagoR"

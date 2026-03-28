@@ -107,25 +107,40 @@
 
 .footer {
   width: 100%;
-  text-align: center;
-  padding: 1.05rem 1rem 1.2rem;
-  color: var(--muted);
-  background: color-mix(in srgb, var(--surface), transparent 22%);
-  border-top: 1px solid color-mix(in srgb, var(--text), transparent 88%);
+  padding: 0.8rem 1rem 1.2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .heart {
   color: #fb7185;
+  display: inline-block;
+  transform-origin: center;
+  animation: pulse 2.6s ease-in-out infinite;
 }
 
 .link {
   color: var(--accent);
   text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
 }
 
 .link:hover,
 .link:focus-visible {
-  text-decoration: underline;
+  color: var(--text);
+  text-decoration: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.16);
+  }
 }
 
 @keyframes fadeUp {
