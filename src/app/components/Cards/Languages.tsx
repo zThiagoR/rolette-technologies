@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import styles from '../../../styles/card.module.scss';
+import styles from '../../../styles/card.module.css';
 
 import data from '../../../data/technologies.json';
 

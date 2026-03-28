@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './styles/page.module.scss';
+import styles from './styles/page.module.css';
 
 import LanguagesCard from './app/components/Cards/Languages';
 import FrontEndCard from './app/components/Cards/FrontEnd';
